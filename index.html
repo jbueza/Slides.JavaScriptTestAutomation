@@ -7,7 +7,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	
-	<title>Azure Web Sites</title>
+	<title>JavaScript Test Automation: The RESAAS Story</title>
 	
 	<meta name="description" content="A jQuery library for modern HTML presentations">
 	<meta name="author" content="Jaime Bueza">
@@ -32,7 +32,7 @@
 	
 	<style>
 	  .meta {
-	    width: 300px;
+	    width: 400px;
 	    position: absolute;
 	    bottom: 0;
 	    left: 0;
@@ -42,6 +42,29 @@
 	  }
 	  .meta span {
 	    margin-left: 10px;
+	    margin-bottom: 10px;
+	  }
+	  
+	  .meta span.social {
+	    margin-left: 10px;
+	    margin-bottom: 10px;
+	    font-size: 12px;
+	    display: inline-block;
+	    overflow: hidden;
+	  }
+	  .meta .title {
+	    font-size: 16px;
+	    color: #fff;
+	  }
+	  .meta .line {
+	    height: 50px;
+	    overflow: hidden;
+	  }
+	  .meta .line a {
+	    line-height: 30px;
+	  }
+	  .meta img {
+	    float: left;
 	  }
 	  .logo-abc, .logo-resaas {
 	    position: absolute;
@@ -50,119 +73,91 @@
 	  }
 	  .logo-abc { right: 120px; }
 	  .logo-resaas { right: -130px;}
+	
 	</style>
 </head>
 
 <body class="deck-container">
 <!-- Begin slides -->
 <section class="slide" id="title-slide">
-	<h1>Windows Azure<br>Web Sites</h1>
+	<h1>JavaScript Test<br>Automation</h1>
+	<h2>The Story of RESAAS</h2>
+	<h3>#vansoftwareautomation</h3>
 	<a href="http://www.agilebusinesscloud.com" target="_blank"><img class="logo-abc" src="http://abcmarketing.azurewebsites.net/img/logo-abc.png"></a>
   <a href="http://www.resaas.com" target="_blank"><img class="logo-resaas" src="http://www.resaas.com/assets/home/images/ui/logo-resaas.png"></a>
   
 	<div class="meta">
 	  <img src="http://content.agilebusinesscloud.com/content/images/JaimeBueza.jpg" width="75" align="left">
-	  <span class="author">Jaime Bueza</span>
-	  <span class="twitter"><a href="http://twitter.com/jbueza">@jbueza</a></span><br>
-	  <span>
-	  <a href="http://www.agilebusinesscloud.com" title="Agile Business Cloud Solutions Ltd">[ABC]</a> |
-    <a href="http://www.resaas.com" title="RESAAS">[RESAAS]</a>
-    </span>
+	  <span class="author">Jaime Bueza</span><br>
+	  <span class="title">Mobile, Web, Cloud Evangelist</span>
+	  <div class="line">
+	    <span class="social twitter"><a href="http://twitter.com/jbueza"><img src="images/logo-twitter.png">@jbueza</a></span>
+	    <span class="social github"><a href="http://github.com/jbueza"><img src="images/logo-github.png">jbueza</a></span>
+	    <span class="social linkedin"><a href="http://linkedin.com/in/jbueza"><img src="images/logo-linkedin.png">jbueza</a></span>
+	  </div>
 	</div>
 </section>
 <section class="slide">
-	<h2>In This Talk</h2>
-	<p>I'll be going over a few awesome features that landed recently...</p>
+	<h2>Once upon a time...</h2>
+	<p>About a year ago, one engineer at RESAAS.</p>
+	<p>Now at 10 engineers.</p>
+	<p>Legacy code...</p>
+	<p>How do we test aspects of the application?</p
 	<ul>
 		<li class="slide">
-			<strong>Git-based deployment</strong>: Added support for deploying web apps with Git
+			<strong>Code</strong>: Unit tests, mocks, spies.
 		</li>
 		<li class="slide">
-			<strong>Apps</strong>: Added "ready to go" applications, such as, Wordpress, Drupal, DotNetNuke. Also support for MySQL databases.
+			<strong>Integration</strong>: Web service tests, fixture tests, database tests.
 		</li>
 		<li class="slide">
-			<strong>SDKs</strong>: Added support for NodeJS, PHP, Python, and Java
+			<strong>User</strong>: User interface tests, checking to see if users can login.
 		</li>
 	</ul>
 </section>
 
 <section class="slide">
-  <h2>Git-based deployment</h2>
-  <pre><code>
-    λ: git init
-    λ: git add .
-    λ: git commit -m "Go Azure Go" .
-    λ: git remote add azure ______    
-    λ: git push azure master
-  </code></pre>
-  <h3>Demo Time!</h3>
-  <p>Let's put up a static HTML file with hello world!</p>
+  <h2>Core Engineering Mantras</h2>
+  <blockquote>"Nothing good comes out of fixing production at 2am"</blockquote>
+  <h5><em>- Jef King (2011)</em></h5>
 </section>
 
 <section class="slide">
-  <h2>Applications (apps)</h2>
+  <h2>Core Engineering Mantras</h2>
+  <blockquote>"It's not a feature unless it is tested."</blockquote>
+  <h5><em>- Jef King (2011)</em></h5>
+</section>
+
+<section class="slide">
+  <h2>Tooling</h2>
+  <p>At the time...</p>
   <ul>
-    <li class="slide">Windows Azure allows you to easily deploy "ready to go" apps. A great example is Wordpress.</li>
-    <li class="slide">In this demo, I'll create a Wordpress blog and post a few items.</li>
-    <li class="slide">Keep in mind, there is plenty of potential -- more apps in future!</li>
-    <li class="slide">Demo Time! Let's create a Wordpress blog!</li>
-  </ul>
-</section>
-
-<section class="slide">
-  <h2>SDKs</h2>
-
-  <p>In this demo, I'll be using the NodeJS SDK for spinning up a web app and pushing it to Azure.</p>
-  
-  <ul>
-    <li class="slide">1. Creating a brand new dynamic site using Express/NodeJS</li>
-    <li class="slide">2. Deploying to Azure</li>
-    <li class="slide">3. Winning</li>
-  </ul>
-</section>
-
-<section class="slide">
-	<h2>A few things...</h2>
-  <ul>
-    <li class="slide"><strong>Custom Domains</strong>: coming soon to Shared. Works in Reserved though!</li>
-    <li class="slide"><strong>SSL</strong>: works great on azuresites.net, not so great on custom domains in reserved mode.</li>
-    <li class="slide"><strong>HTTP Requests through IIS</strong>: no web sockets out of the box, must use worker role</li>
-  </ul>
-</section>
-
-<section class="slide">
-	<h2>The Good Parts</h2>
-  <ul>
-    <li class="slide"><strong>Convenience</strong>: if you wanted a site up and running very quickly, this is how you do it!</li>
-    <li class="slide"><strong>Cheap</strong>: shared websites (you get 10) are free! Reserved instances cost money.</li>
-    <li class="slide"><strong>Scale</strong>: vertically or horizontally!</li>
-    <li class="slide"><strong>Potential</strong>: Azure is evolving rapidly, more services, tools, and APIs coming out every few weeks</li>
-    <li class="slide"><strong>Tooling</strong>: easily slot in Jenkins to run your unit tests, service layer tests, and then push your site</li>
-    <li class="slide"><strong>Open</strong>: deploy any stack you want (NodeJS, PHP, JavaScript, Python)</li>
-  </ul>
-</section>
-
-
-<section class="slide">
-  <h2>Done!</h2>
-  <p>Any questions? concerns? Hit me up <a href="http://twitter.com/jbueza">@jbueza</a></p>
-  <br>
-  <p>OH YEAH!</p>
-  <h2>RESAAS is hiring!</h2>
-  <p><a href="http://www.resaas.com" target="_blank"><img width="450" src="http://www.resaas.com/assets/home/images/ui/logo-resaas.png"></a>
-    always looking for backend and frontend developers!</p> 
-  <p>Come say "hi"! We are super friendly!</p>
-</section>
-
-<section class="slide">
-  <h2>Big Thanks!</h2>
- 
-  <ul>
-      <li>all of you here tonight!</li>
-      <li>Microsoft (Mitch) for facilitating these meetups!</li>
+    <li>Visual Studio 2010</li>
+    <li>SQL Server</li>
+    <li>Windows Azure SDK</li>
   </ul>
   
-  <h3>With all these awesome tools, start hacking on something cool!</h3>
+  <p>* Don't change the toolsets too much!</p>
+  <p>Found Chutzpah! Thanks to <a href="http://twitter.com/mmanela/">@mmanela</a></p>
+</section>
+
+<section class="slide">
+  <h2>Chutzpah</h2>
+  <ul>
+    <li>Visual Studio Extension</li>
+    <li>Runs all tests inside PhantomJS</li>
+    <li>Streams results to output window</li>
+    <li>Integrates with Jenkins for CI</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Ending Announcements</h2>
+  <ul>
+    <li class="slide">Thank you all for coming out!</li>
+    <li class="slide">RESAAS is hiring!</li>
+    <li class="slide">Let's go for a drink!</li>
+  </ul>
 </section>
 
 <!-- deck.navigation snippet -->
