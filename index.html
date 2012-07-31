@@ -1,84 +1,209 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>JavaScript Test Automation: The RESAAS Story</title>
+	
+	<meta name="description" content="A jQuery library for modern HTML presentations">
+	<meta name="author" content="Jaime Bueza">
+	<meta name="viewport" content="width=1024, user-scalable=no">
+	
+	<!-- Core and extension CSS files -->
+	<link rel="stylesheet" href="core/deck.core.css">
+	<link rel="stylesheet" href="extensions/goto/deck.goto.css">
+	<link rel="stylesheet" href="extensions/menu/deck.menu.css">
+	<link rel="stylesheet" href="extensions/navigation/deck.navigation.css">
+	<link rel="stylesheet" href="extensions/status/deck.status.css">
+	<link rel="stylesheet" href="extensions/hash/deck.hash.css">
+	<link rel="stylesheet" href="extensions/scale/deck.scale.css">
+	
+	<!-- Style theme. More available in /themes/style/ or create your own. -->
+	<link rel="stylesheet" href="themes/style/neon.css">
+	
+	<!-- Transition theme. More available in /themes/transition/ or create your own. -->
+	<link rel="stylesheet" href="themes/transition/vertical-slide.css">
+	
+	<script src="modernizr.custom.js"></script>
+	
+	<style>
+	  .meta {
+	    width: 400px;
+	    position: absolute;
+	    bottom: 0;
+	    left: 0;
+	  }
+	  .meta a {
+	    color: #ccc !important;
+	  }
+	  .meta span {
+	    margin-left: 10px;
+	    margin-bottom: 10px;
+	  }
+	  
+	  .meta span.social {
+	    margin-left: 10px;
+	    margin-bottom: 10px;
+	    font-size: 12px;
+	    display: inline-block;
+	    overflow: hidden;
+	  }
+	  .meta .title {
+	    font-size: 16px;
+	    color: #fff;
+	  }
+	  .meta .line {
+	    height: 50px;
+	    overflow: hidden;
+	  }
+	  .meta .line a {
+	    line-height: 30px;
+	  }
+	  .meta img {
+	    float: left;
+	  }
+	  .logo-abc, .logo-resaas {
+	    position: absolute;
+	    z-index: 9999;
+	    top: 10px;
+	  }
+	  .logo-abc { right: 120px; }
+	  .logo-resaas { right: -130px;}
+	
+	</style>
+</head>
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Slides.javascripttestautomation : Summer 2012: JavaScript Test Automation - The RESAAS Story -- Told at the Vancouver Software Test Automation Meetup Group. #vansoftwareautomation" />
+<body class="deck-container">
+<!-- Begin slides -->
+<section class="slide" id="title-slide">
+	<h1>JavaScript Test<br>Automation</h1>
+	<h2>The Story of RESAAS</h2>
+	<h3>#vansoftwareautomation</h3>
+	<a href="http://www.agilebusinesscloud.com" target="_blank"><img class="logo-abc" src="http://abcmarketing.azurewebsites.net/img/logo-abc.png"></a>
+  <a href="http://www.resaas.com" target="_blank"><img class="logo-resaas" src="http://www.resaas.com/assets/home/images/ui/logo-resaas.png"></a>
+  
+	<div class="meta">
+	  <img src="http://content.agilebusinesscloud.com/content/images/JaimeBueza.jpg" width="75" align="left">
+	  <span class="author">Jaime Bueza</span><br>
+	  <span class="title">Mobile, Web, Cloud Evangelist</span>
+	  <div class="line">
+	    <span class="social twitter"><a href="http://twitter.com/jbueza"><img src="images/logo-twitter.png">@jbueza</a></span>
+	    <span class="social github"><a href="http://github.com/jbueza"><img src="images/logo-github.png">jbueza</a></span>
+	    <span class="social linkedin"><a href="http://linkedin.com/in/jbueza"><img src="images/logo-linkedin.png">jbueza</a></span>
+	  </div>
+	</div>
+</section>
+<section class="slide">
+	<h2>Once upon a time...</h2>
+	<p>About a year ago, one engineer at RESAAS.</p>
+	<p>Now at 10 engineers.</p>
+	<p>Legacy code...</p>
+	<p>How do we test aspects of the application?</p
+	<ul>
+		<li class="slide">
+			<strong>Code</strong>: Unit tests, mocks, spies.
+		</li>
+		<li class="slide">
+			<strong>Integration</strong>: Web service tests, fixture tests, database tests.
+		</li>
+		<li class="slide">
+			<strong>User</strong>: User interface tests, checking to see if users can login.
+		</li>
+	</ul>
+</section>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+<section class="slide">
+  <h2>Core Engineering Mantras</h2>
+  <blockquote>"Nothing good comes out of fixing production at 2am"</blockquote>
+  <h5><em>- Jef King (2011)</em></h5>
+</section>
 
-    <title>Slides.javascripttestautomation</title>
-  </head>
+<section class="slide">
+  <h2>Core Engineering Mantras</h2>
+  <blockquote>"It's not a feature unless it is tested."</blockquote>
+  <h5><em>- Jef King (2011)</em></h5>
+</section>
 
-  <body>
+<section class="slide">
+  <h2>Tooling</h2>
+  <p>At the time...</p>
+  <ul>
+    <li>Visual Studio 2010</li>
+    <li>SQL Server</li>
+    <li>Windows Azure SDK</li>
+  </ul>
+  
+  <p>* Don't change the toolsets too much!</p>
+  <p>Found Chutzpah! Thanks to <a href="http://twitter.com/mmanela/">@mmanela</a></p>
+</section>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/jbueza/Slides.JavaScriptTestAutomation">View on GitHub</a>
+<section class="slide">
+  <h2>Chutzpah Demo</h2>
+  <ul>
+    <li>Visual Studio Extension</li>
+    <li>Use JasmineBDD for specifications: async support, matchers, spies, nesting</li>
+    <li>Use Sinon.js for mocking, spies, stubs</li>
+    <li>Runs all tests inside PhantomJS</li>
+    <li>Streams results to output window</li>
+    <li>Integrates with Jenkins for CI</li>
+  </ul>
+</section>
 
-          <h1 id="project_title">Slides.javascripttestautomation</h1>
-          <h2 id="project_tagline">Summer 2012: JavaScript Test Automation - The RESAAS Story -- Told at the Vancouver Software Test Automation Meetup Group. #vansoftwareautomation</h2>
+<section class="slide">
+  <h2>Ending Announcements</h2>
+  <ul>
+    <li class="slide">Thank you all for coming out!</li>
+    <li class="slide">RESAAS is hiring!</li>
+    <li class="slide">Let's go for a drink!</li>
+  </ul>
+</section>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/jbueza/Slides.JavaScriptTestAutomation/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/jbueza/Slides.JavaScriptTestAutomation/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+<!-- deck.navigation snippet -->
+<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a href="#" class="deck-next-link" title="Next">&#8594;</a>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>Welcome to GitHub Pages.</h3>
+<!-- deck.status snippet -->
+<p class="deck-status">
+	<span class="deck-status-current"></span>
+	/
+	<span class="deck-status-total"></span>
+</p>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<!-- deck.goto snippet -->
+<form action="." method="get" class="goto-form">
+	<label for="goto-slide">Go to slide:</label>
+	<input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+	<datalist id="goto-datalist"></datalist>
+	<input type="submit" value="Go">
+</form>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Slides.javascripttestautomation maintained by <a href="https://github.com/jbueza">jbueza</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-22324537-2");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
+<!-- deck.hash snippet -->
+<a href="." title="Permalink to this slide" class="deck-permalink">#</a>
 
 
-  </body>
+<!-- Grab CDN jQuery, with a protocol relative URL; fall back to local if offline -->
+<script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+<script>window.jQuery || document.write('<script src="jquery-1.7.min.js"><\/script>')</script>
+
+<!-- Deck Core and extensions -->
+<script src="core/deck.core.js"></script>
+<script src="extensions/hash/deck.hash.js"></script>
+<script src="extensions/menu/deck.menu.js"></script>
+<script src="extensions/goto/deck.goto.js"></script>
+<script src="extensions/status/deck.status.js"></script>
+<script src="extensions/navigation/deck.navigation.js"></script>
+<script src="extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck -->
+<script>
+$(function() {
+	$.deck('.slide');
+});
+</script>
+
+</body>
 </html>
